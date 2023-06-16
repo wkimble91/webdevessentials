@@ -1,0 +1,34 @@
+---
+import Card from './Card.astro';
+const featuresData = await Astro.glob('../content/Software/*.md');
+const { currTag = '' } = Astro.props;
+---
+
+<section class='features'>
+    <div class='container'>
+        {
+            featuresData.map(
+                (feature) =>
+                    feature.frontmatter.tags.includes(`${currTag}`) && (
+                        <Card {...feature.frontmatter} />
+                    )
+            )
+        }
+    </div>
+</section>
+
+<style lang='scss'>
+    .features .container {
+        z-index: 2;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        grid-gap: 20px;
+        padding: 0 20px;
+        margin: 30px auto;
+
+        @media only screen and (max-width: 56.25em) {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            margin-bottom: 10rem;
+        }
+    }
+</style>

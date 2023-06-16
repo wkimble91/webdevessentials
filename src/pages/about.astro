@@ -1,0 +1,40 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Sidebar from '../components/Sidebar.astro';
+---
+
+<Layout title='WebDev Essentials'>
+    <Sidebar />
+    <main>
+        <Navbar />
+        <section class='about'>
+            <h1 class='about__title'>About Web Dev Essentials</h1>
+            <p class='about__description'>
+                To put it simply: I made this for me.
+            </p>
+            <p class='about__description'>Add more here</p>
+        </section>
+    </main>
+</Layout>
+
+<style lang='scss'>
+    .about {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 6rem auto;
+        width: 80%;
+
+        &__title {
+            font-size: 5rem;
+        }
+
+        &__description {
+            width: 100%;
+            font-size: 2rem;
+            text-align: left;
+        }
+    }
+</style>

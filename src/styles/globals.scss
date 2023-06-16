@@ -1,0 +1,179 @@
+/*-- -------------------------- -->
+<---       Color Schemes        -->
+<--- -------------------------- -*/
+
+// Light mode
+:root {
+  --clr-grey-light: #d6d6d6;
+  --clr-grey-dark: #222222;
+
+  --clr-accent: #98c9eb;
+  --clr-primary: #83bde7;
+  --clr-secondary: #e1eff9;
+
+  --background: #fbfdfe;
+  --body-text: #02090d;
+
+  --toggle-color: #fec44c;
+  --card-background: rgb(251, 253, 254);
+}
+
+//Dark mode
+.darkMode {
+  --clr-accent: #5efafd;
+  --clr-primary: #77fbfd;
+  --clr-secondary: #102020;
+
+  --background: #101818;
+  --body-text: #EBFFFF;
+
+  --toggle-color: #77fbfd;
+  --card-background: rgba(26, 34, 34, 0.6);
+}
+
+// Tag Colors
+:root {
+  --tag-api: #b9fbc0;
+  --tag-background: #98f5e1;
+  --tag-color: #8eecf5;
+  --tag-css: #90dbf4;
+  --tag-layout: #a3c4f3;
+  --tag-font: #cfbaf0;
+  --tag-icon: #f1c0e8;
+  --tag-javascript: #ffcfd2;
+  --tag-media: #fde4cf;
+  --tag-spacing: #fbf8cc;
+  --tag-svg: #d9ed92;
+}
+
+/*-- -------------------------- -->
+<---        Breakpoints         -->
+<--- -------------------------- -*/
+
+$bp-largest: 112.5em; //1400px
+$bp-large: 75em; //1200px
+$bp-medium: 56.25em; //900px
+$bp-small: 37.5em; //600px
+$bp-smallest: 25em; //400px
+
+/*-- -------------------------- -->
+<---          Spacing           -->
+<--- -------------------------- -*/
+
+:root {
+  --default-border-radius-sm: 5px;
+  --default-border-radius-lg: 10px;
+}
+
+/*-- -------------------------- -->
+<---         Font Sizes         -->
+<--- -------------------------- -*/
+/* @link https://utopia.fyi/type/calculator?c=320,18,1.2,1240,20,1.25,5,0,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+:root {
+  /* Step 0: 12.50px → 12.80px */
+  --ft-size-0: clamp(0.78rem, calc(0.77rem + 0.03vw), 0.80rem);
+
+  /* Step 1: 15.00px → 16.00px */
+  --ft-size-1: clamp(0.94rem, calc(0.92rem + 0.11vw), 1.00rem);
+
+  /* Step 2: 18.00px → 20.00px */
+  --ft-size-2: clamp(1.13rem, calc(1.08rem + 0.22vw), 1.25rem);
+
+  /* Step 3: 21.60px → 25.00px */
+  --ft-size-3: clamp(1.35rem, calc(1.28rem + 0.37vw), 1.56rem);
+
+  /* Step 4: 25.92px → 31.25px */
+  --ft-size-4: clamp(1.62rem, calc(1.50rem + 0.58vw), 1.95rem);
+
+  /* Step 5: 31.10px → 39.06px */
+  --ft-size-5: clamp(1.94rem, calc(1.77rem + 0.87vw), 2.44rem);
+
+  /* Step 6: 37.32px → 48.83px */
+  --ft-size-6: clamp(2.33rem, calc(2.08rem + 1.25vw), 3.05rem);
+
+  /* Step 7: 44.79px → 61.04px */
+  --ft-size-7: clamp(2.80rem, calc(2.45rem + 1.77vw), 3.82rem);
+
+  /* Step 8: 53.75px → 76.29px */
+  --ft-size-8: clamp(3.0rem, calc(2rem + 1.45vw), 4.77rem);
+}
+
+/*-- -------------------------- -->
+<---       Font Families        -->
+<--- -------------------------- -*/
+
+:root {
+  --ft-family-body: 'IBM Plex Sans', sans-serif;
+  --ft-family-header: 'IBM Plex Sans Condensed', sans-serif;
+}
+
+/*-- -------------------------- -->
+<---          Gloabls           -->
+<--- -------------------------- -*/
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; //1rem = 10px
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--body-text);
+  font-family: var(--ft-family-body);
+  line-height: 1.6;
+  width: 100vw;
+  overflow-x: hidden;
+  display: flex;
+  position: relative;
+}
+
+main {
+  width: 100%;
+  min-height: 100vh;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*-- -------------------------- -->
+<---    Images that need to     -->
+<---   check for Webp support   -->
+<--- -------------------------- -*/
+
+.no-webp .header__logo-img {
+  background-image: url(../images/logo.png);
+}
+
+.webp .header__logo-img {
+  background-image: url(../images/logo.webp);
+}
+
+
+/*-- -------------------------- -->
+<---       Comment order        -->
+<--- -------------------------- -*/
+//Mixin
+//Parent
+//Display
+//Spacing
+//Font 
+//Color 
+//Image 
+//Border 
+//Animations

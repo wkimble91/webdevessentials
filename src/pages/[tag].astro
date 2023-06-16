@@ -1,0 +1,78 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Sidebar from '../components/Sidebar.astro';
+import Features from '../components/Features.astro';
+
+export function getStaticPaths() {
+	return [
+		{ params: { tag: 'api' } },
+		{ params: { tag: 'background' } },
+		{ params: { tag: 'color' } },
+		{ params: { tag: 'css' } },
+		{ params: { tag: 'font' } },
+		{ params: { tag: 'icon' } },
+		{ params: { tag: 'javascript' } },
+		{ params: { tag: 'layout' } },
+		{ params: { tag: 'media' } },
+		{ params: { tag: 'spacing' } },
+		{ params: { tag: 'svg' } },
+	];
+}
+
+const { tag } = Astro.params;
+---
+
+<Layout>
+	<Sidebar />
+	<main>
+		<section class='home'>
+			<div class='home-container'>
+				<Navbar />
+				<h1 class='home__title'>&lt; {tag} tools /&gt</h1>
+			</div>
+		</section>
+		<Features currTag={tag} />
+	</main>
+</Layout>
+
+<style lang='scss'>
+	.home {
+		position: relative;
+		height: 25vh;
+		width: 100%;
+
+		&-container {
+			z-index: 10;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: center;
+			padding: 6rem auto;
+			width: calc(100vw - 23rem);
+			background-image: (url('../images/grid.svg'));
+			background-color: var(--background);
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
+			height: 25vh;
+			border-bottom: solid 1px var(--clr-grey-light);
+
+			@media only screen and (max-width: 56.25em) {
+				width: 100vw;
+			}
+		}
+
+		&__title {
+			font-size: var(--ft-size-8);
+			font-weight: 500;
+			font-family: var(--ft-family-header);
+			text-align: center;
+			color: white;
+			margin-bottom: 8rem;
+			background-color: var(--clr-grey-dark);
+			opacity: 0.9;
+			padding: 0 2rem;
+		}
+	}
+</style>

@@ -1,0 +1,224 @@
+<header id='header' class='header'>
+	<nav class='header-box'>
+		<a
+			href='/'
+			rel='home'
+			aria-label='Top of page link'
+			class='header__logo'
+			target='_self'>
+			<div class='header__logo-img'></div>
+			<h2 class='header__logo-text'>Web Dev<span></span>Essentials</h2>
+		</a>
+		<ul class='header__nav'>
+			<li class='header__nav-item'>
+				<a href='https://willkimble.com#contact' target='_self'
+					>Contact Me</a
+				>
+			</li>
+			<li class='header__nav-toggle'>
+				<button
+					class='darkMode-toggle'
+					id='darkMode-toggle'
+					type='button'
+					title='Toggle darkMode'
+					aria-label='Toggle darkMode'>
+					<svg
+						xmlns='http://www.w3.org/2000/svg'
+						aria-hidden='true'
+						fill='currentColor'
+						stroke-linecap='round'
+						class='darkMode-toggle__classic'
+						viewBox='0 0 32 32'>
+						<clipPath id='darkMode-toggle__classic__cutout'>
+							<path d='M0-5h30a1 1 0 0 0 9 13v24H0Z'></path>
+						</clipPath>
+						<g clip-path='url(#darkMode-toggle__classic__cutout)'>
+							<circle cx='16' cy='16' r='9.34'></circle>
+							<g stroke='var(--toggle-color)' stroke-width='1.5'>
+								<path d='M16 5.5v-4'></path>
+								<path d='M16 30.5v-4'></path>
+								<path d='M1.5 16h4'></path>
+								<path d='M26.5 16h4'></path>
+								<path d='m23.4 8.6 2.8-2.8'></path>
+								<path d='m5.7 26.3 2.9-2.9'></path>
+								<path d='m5.8 5.8 2.8 2.8'></path>
+								<path d='m23.4 23.4 2.9 2.9'></path>
+							</g>
+						</g>
+					</svg>
+				</button>
+			</li>
+		</ul>
+	</nav>
+</header>
+
+<style lang='scss'>
+	.header {
+		display: flex;
+		justify-content: center;
+		width: 100%;
+		z-index: 200;
+		height: 10rem;
+		text-decoration: none;
+		background-color: var(--background-color);
+		transition: box-shadow 0.2s;
+
+		@media only screen and (max-width: 37.5em) {
+			z-index: 10;
+		}
+
+		&-box {
+			display: flex;
+			justify-content: space-between;
+			width: 80%;
+
+			@media only screen and (max-width: 56.25em) {
+				width: 95%;
+			}
+		}
+
+		&__logo {
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			z-index: 200;
+
+			&-text {
+				margin-left: 1rem;
+				text-decoration: none;
+				font-family: var(--ft-family-header);
+				font-weight: 500;
+				font-size: var(--ft-size-5);
+				letter-spacing: -0.5px;
+				line-height: 1.2;
+				color: var(--body-text);
+
+				@media only screen and (max-width: 56.25em) {
+					margin-right: 3rem;
+					font-size: var(--ft-size-4);
+				}
+
+				@media only screen and (max-width: 37.5em) {
+					margin-right: 1rem;
+					line-height: 1;
+				}
+
+				& span {
+					display: block;
+				}
+			}
+
+			&-img {
+				height: 6rem;
+				width: 6rem;
+				margin: 1rem 0;
+				background-size: cover;
+				background-position: top;
+				overflow: visible;
+				border: none;
+				transition: all 0.3s;
+
+				@media only screen and (max-width: 75em) {
+					margin-left: 1rem;
+				}
+
+				@media only screen and (max-width: 56.25em) {
+					height: 5rem;
+					width: 5rem;
+				}
+
+				@media only screen and (max-width: 37.5em) {
+					height: 4rem;
+					width: 4rem;
+				}
+			}
+
+			&:hover &-img {
+				animation: rotate 0.8s ease-in-out;
+			}
+		}
+
+		&__nav {
+			display: flex;
+			align-items: center;
+
+			&-toggle {
+				@media only screen and (max-width: 37.5em) {
+					padding: 4rem 0;
+				}
+			}
+
+			.darkMode-toggle {
+				cursor: pointer;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background-color: inherit;
+				padding: 1px;
+				border-radius: 0.5rem;
+				color: var(--toggle-color);
+
+				&__classic {
+					width: 4rem;
+					height: 4rem;
+				}
+			}
+
+			& * {
+				& a {
+					margin-right: 2rem;
+					padding: 1rem 2rem;
+					font-size: var(--ft-size-4);
+					font-weight: 300;
+					transition: all 0.2s;
+					color: var(--body-text);
+					border-radius: var(--default-border-radius-sm);
+					background-color: var(--clr-primary);
+
+					&:hover {
+						box-shadow: 0 15px 40px -10px var(--clr-primary);
+					}
+
+					@media only screen and (max-width: 56.25em) {
+						padding: 0.8rem 1rem;
+						margin-right: 3rem;
+					}
+
+					@media only screen and (max-width: 37.5em) {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+
+	@keyframes rotate {
+		0% {
+			transform: rotateZ(0);
+		}
+
+		17% {
+			transform: rotateZ(-25deg);
+		}
+
+		34% {
+			transform: rotateZ(15deg);
+		}
+
+		51% {
+			transform: rotateZ(-12deg);
+		}
+
+		68% {
+			transform: rotateZ(6deg);
+		}
+
+		85% {
+			transform: rotateZ(-4deg);
+		}
+
+		100% {
+			transform: rotateZ(0);
+		}
+	}
+</style>

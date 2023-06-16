@@ -1,0 +1,73 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Sidebar from '../components/Sidebar.astro';
+import Features from '../components/Features.astro';
+---
+
+<Layout>
+	<Sidebar />
+	<main>
+		<section class='home'>
+			<div class='home-container'>
+				<Navbar />
+				<h1 class='home__title'>
+					&lt; Welcome to Web Dev Essentials /&gt;
+				</h1>
+			</div>
+		</section>
+		<Features />
+	</main>
+</Layout>
+
+<style lang='scss'>
+	.home {
+		position: relative;
+		height: 25vh;
+		width: 100%;
+
+		&-container {
+			z-index: 10;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: center;
+			padding: 6rem auto;
+			width: calc(100vw - 23rem);
+			background-image: (url('../images/grid.svg'));
+			background-color: var(--background);
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
+			height: 25vh;
+			border-bottom: solid 1px var(--clr-grey-light);
+
+			@media only screen and (max-width: 56.25em) {
+				width: 100vw;
+			}
+		}
+
+		&__title {
+			font-size: var(--ft-size-8);
+			font-weight: 500;
+			font-family: var(--ft-family-header);
+			text-align: center;
+			color: white;
+			margin-bottom: 8rem;
+			background-color: var(--clr-grey-dark);
+			opacity: 0.9;
+			padding: 0 2rem;
+
+			@media only screen and (max-width: 56.25em) {
+				padding: 0;
+				width: auto;
+				margin-bottom: 6rem;
+				font-size: var(--ft-size-6);
+			}
+
+			@media only screen and (max-width: 37.5em) {
+				font-size: var(--ft-size-5);
+			}
+		}
+	}
+</style>

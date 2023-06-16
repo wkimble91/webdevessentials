@@ -1,0 +1,106 @@
+---
+const { title, body, logo, url, tags } = Astro.props;
+---
+
+<a href={url} class='card'>
+    <div class='card__top'>
+        <img class='card__top-logo' src={logo} alt=`${title} Logo` loading="lazy" />
+        <div>
+            <h3 class='card__top-title'>{title}</h3>
+            <div class='card__top-tags'>
+                {
+                    tags.split(',').map((tag) => <span class=`${tag}` >{tag}</span>)
+                }
+            </div>
+        </div>
+    </div>
+    <p class='card__body'>{body}</p>
+</a>
+
+<style lang='scss'>
+    .card {
+        background-color: var(--card-background);
+        color: var(--text-color);
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 8px var(--clr-primary);
+        margin-bottom: 20px;
+        transition: all .2s;
+
+        @media only screen and (max-width: 56.25em) {
+        margin-bottom: 0;
+        }
+
+        &:hover {
+        box-shadow: 0 0 15px var(--clr-primary);
+        transform: scale(1.005);
+        }
+
+        &__top {
+            display: flex;
+            &-logo {
+                width: 50px;
+                height: 50px;
+                margin-right: 10px;
+                padding: 5px;
+            }
+
+            &-title {
+                font-size: var(--ft-size-4);
+            }
+
+            &-tags {
+                & span {
+                    z-index: 2;
+                    font-size: var(--ft-size-2);
+                    color: var(--clr-grey-dark);
+                    width: fit-content;
+                    font-weight: 400;
+                    padding: 1px 5px;
+                    margin-right: 3px;
+                    border-radius: 4px;
+                }
+            }
+        }
+
+        &__body {
+            margin: 10px 0;
+            font-size: var(--ft-size-2);
+            width: 100%;
+        }
+    }
+
+    .api{
+        background-color: var(--tag-api);
+    }
+    .background{
+        background-color: var(--tag-background);
+    }
+    .color{
+        background-color: var(--tag-color);
+    }
+    .css{
+        background-color: var(--tag-css);
+    }
+    .layout{
+        background-color: var(--tag-layout);
+    }
+    .font{
+        background-color: var(--tag-font);
+    }
+    .icon{
+        background-color: var(--tag-icon);
+    }
+    .javascript{
+        background-color: var(--tag-javascript);
+    }
+    .media{
+        background-color: var(--tag-media);
+    }
+    .spacing{
+        background-color: var(--tag-spacing);
+    }
+    .svg{
+        background-color: var(--tag-svg);
+    }
+</style>

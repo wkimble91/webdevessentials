@@ -1,4 +1,5 @@
 # WebDev Essentials
+
 ---
 
 ## 🚀 Project Structure

@@ -1,0 +1,100 @@
+@import 'globals';
+/*-- -------------------------- -->
+<---        Toggle Button       -->
+<---          Styling           -->
+<--- -------------------------- -*/
+
+// Credit to https://toggles.dev/classic for the svg and animations
+.darkMode-toggle.darkMode-toggle--reversed .darkMode-toggle__classic {
+  transform: scale(-1, 1)
+}
+
+.darkMode-toggle {
+  --darkMode-toggle__classic--duration: 500ms
+}
+
+.darkMode-toggle__classic path {
+  transition-timing-function: cubic-bezier(0, 0, 0.15, 1.25);
+  transform-origin: center;
+  transition-duration: calc(var(--darkMode-toggle__classic--duration) * .8)
+}
+
+.darkMode-toggle__classic g path {
+  transition-property: opacity, transform;
+  transition-delay: calc(var(--darkMode-toggle__classic--duration) * 0.2)
+}
+
+.darkMode-toggle__classic :first-child path {
+  transition-property: transform, d
+}
+
+.darkMode-toggle input[type=checkbox]:checked~.darkMode-toggle__classic g path,
+.darkMode-toggle--toggled:not(label).darkMode-toggle .darkMode-toggle__classic g path {
+  transform: scale(.5) rotate(45deg);
+  opacity: 0;
+  transition-delay: 0s
+}
+
+.darkMode-toggle input[type=checkbox]:checked~.darkMode-toggle__classic :first-child path,
+.darkMode-toggle--toggled:not(label).darkMode-toggle .darkMode-toggle__classic :first-child path {
+  d: path("M-12 5h30a1 1 0 0 0 9 13v24h-39Z");
+  transition-delay: calc(var(--darkMode-toggle__classic--duration) * 0.2)
+}
+
+@supports not (d:path("")) {
+
+  .darkMode-toggle input[type=checkbox]:checked~.darkMode-toggle__classic :first-child path,
+  .darkMode-toggle--toggled:not(label).darkMode-toggle .darkMode-toggle__classic :first-child path {
+    transform: translate3d(-12px, 10px, 0)
+  }
+}
+
+.darkMode-toggle {
+  border: none;
+  background: 0 0;
+  cursor: pointer
+}
+
+.darkMode-toggle input[type=checkbox] {
+  display: none
+}
+
+.darkMode-toggle .darkMode-toggle-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0
+}
+
+@media (prefers-reduced-motion:reduce) {
+  .darkMode-toggle:not(.darkMode-toggle--force-motion) * {
+    transition: none !important
+  }
+}
+
+/*-- -------------------------- -->
+<---         Styles for         -->
+<---         Dark Mode          -->
+<--- -------------------------- -*/
+
+body.darkMode {
+  .header {
+
+    & a {
+      color: var(--background);
+    }
+  }
+}
+
+.sidebar {
+  border-right: solid 1px var(--clr-grey-dark);
+
+  &__search {
+    border: 1px solid rgba(white, .6);
+  }
+}
