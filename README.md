@@ -34,7 +34,11 @@ Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page
 
 `src/components/` is where any Astro/React/Vue/Svelte/Preact components go.
 
-Any static assets, like images and favicons, can be placed in the `public/` directory.
+`src/content/` is where any markdown files go and they are automatically populated as individual cards.
+
+Any static assets, like images and favicons, can either be placed in the `public/` directory or the 'src/images' directory.
+
+Style files, including Scss, can be directly imported without compiling beforehand. Scss can also be written directly to Astro files.
 
 ## 🧞 Commands
 
