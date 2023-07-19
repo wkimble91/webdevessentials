@@ -1,5 +1,5 @@
 # WebDev Essentials
-
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ea17acda-f4b8-4ad8-9efa-6da0d14cde69/deploy-status)](https://app.netlify.com/sites/webdev-essentials/deploys)
 ---
 
 ## 🚀 Project Structure
@@ -53,7 +53,3 @@ All commands are run from the root of the project, from a terminal:
 | `npm run preview`         | Preview your build locally, before deploying     |
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [Astro documentation](https://docs.astro.build) for more info.
